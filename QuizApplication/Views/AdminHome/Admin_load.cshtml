@@ -1,0 +1,39 @@
+﻿@{
+    TempData["UserType"] = "admin";
+}
+
+<table>
+    <tr>
+        <td>
+            <div style="padding:100px">
+                <a href="@Url.Action("ListQuestion_Load", "ListQuestions")">
+                    <img src="@Url.Content("~/homepageimage/list.png")" style="width:150px; height:150px" />
+                </a>
+                <br />
+                <h3>@Html.ActionLink("Add/View Questions", "ListQuestion_Load", "ListQuestions")</h3>
+            </div>
+        </td>
+        <td>
+            <div style="padding:100px">
+                <a href="@Url.Action("Student_Score", "AdminHome")">
+                    <img src="@Url.Content("~/homepageimage/score.png")" style="width:150px; height:150px" />
+                </a>
+                <br />
+                <h3>@Html.ActionLink("Score", "Student_Score", "AdminHome")</h3>
+            </div>
+        </td>
+        <td>
+            <div style="padding:100px">
+                <a href="@Url.Action("Admin_Feedback", "AdminHome")">
+                    <img src="@Url.Content("~/homepageimage/feedbackk.png")" style="width:150px; height:150px" />
+                </a>
+                <br />
+                <h3>@Html.ActionLink("Feedback", "Admin_Feedback", "AdminHome")</h3>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+

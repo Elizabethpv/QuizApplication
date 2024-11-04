@@ -1,0 +1,68 @@
+﻿@model IEnumerable<QuizApplication.Models.Questions>
+
+@{
+    Layout = "_Layout";
+    TempData["UserType"] = "admin";
+}
+
+<div>
+    @using (Html.BeginForm("questionreg_load", "QuestionReg", FormMethod.Post))
+    {
+        <button class="btn btn-success btn-xs" type="submit">
+            Add new Questions
+        </button>
+    }
+</div>
+<br />
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Option A</th>
+            <th scope="col">Option B</th>
+            <th scope="col">Option C</th>
+            <th scope="col">Option D</th>
+            <th scope="col">Answer</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.QuestionText</td>
+                <td>@item.Ques_OPA</td>
+                <td>@item.Ques_OPB</td>
+                <td>@item.Ques_OPC</td>
+                <td>@item.Ques_OPD</td>
+                <td>@item.Correct_OP</td>
+                <td>
+                    @using (Html.BeginForm("ListQuestion_deleteclick", "ListQuestions", new { id = @item.Question_Id }, FormMethod.Post))
+                    {
+                        <button class="btn btn-danger btn-xs" type="submit">
+                            Delete
+                        </button>
+                    }
+                </td>
+                <td>
+                    @using (Html.BeginForm("EditQuestions_Load", "ListQuestions", new { id = @item.Question_Id }, FormMethod.Get))
+                    {
+                        <button class="btn btn-success btn-xs" type="submit">
+                            Edit
+                        </button>
+                    }
+                </td>
+            </tr>
+        }
+   
+    </tbody>
+</table>
+@{
+    if (@TempData["msg1"] != null)
+    {
+        <script>
+            alert('@TempData["msg1"]')
+        </script>
+    }
+}

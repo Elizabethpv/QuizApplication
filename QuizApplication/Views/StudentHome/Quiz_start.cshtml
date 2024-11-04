@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Final Score";
+    TempData["UserType"] = "student";
+    Layout = "_Layout";
+
+}
+
+<div class="card"> 
+     <div class="row">
+        <div style="text-align:center">
+            <h1 style="font-family:'Times New Roman', Times, serif;color:whitesmoke">Ready to challenge yourself</h1>
+            @using (Html.BeginForm("Questionactions_Load", "QuizHome"))
+            {
+                <button class="btn btn-success btn-xs" type="submit">
+                   Start Quiz
+                </button>
+            }
+        </div>
+     </div> 
+ </div> 
+
+
+
+<style>
+    body {
+        background-image: url('/homepageimage/qqq13.jpg');
+        /* background-size: cover; */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 700px;
+        height: auto;
+        margin: 5% auto;
+        background-color:whitesmoke;
+        padding:100px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: rgba( 255, 255, 255, 0.5 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 5.5px );
+        -webkit-backdrop-filter: blur( 5.5px );       
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+</style>

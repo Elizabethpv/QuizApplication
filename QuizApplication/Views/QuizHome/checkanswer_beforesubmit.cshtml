@@ -1,0 +1,51 @@
+﻿@{
+    var question = ViewBag.Question;
+    Layout = "_Layout";
+    TempData["UserType"] = "student";
+
+}
+
+<div class="card">
+    <div class="row">
+        <div style="text-align:center">
+            <h1 style="font-family:Arial;color:black">Are you sure you want to submit the answer?</h1>
+            <br />
+
+            <form asp-action="checkanswer_click" class="form-horizontal" method="post">
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-success custom-input" />
+                </div>
+            </form>
+
+            @*  <td>
+            @using (Html.BeginForm("Questionactions_Load", "QuizHome", new { id = ViewBag.maxcountquestions }, FormMethod.Get))
+            {
+            <button class="btn btn-danger btn-xs" type="submit">
+            Clear
+            </button>
+            }
+            </td> *@
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+<style>
+    body {
+        background-color: cadetblue;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 700px;
+        height: auto;
+        margin: 5% auto;
+        background-color: white;
+        padding: 100px;
+        border-radius: 10px;
+    }
+</style>

@@ -1,0 +1,64 @@
+﻿@model QuizApplication.Models.Feedback
+@{
+    TempData["UserType"] = "admin";
+    Layout = "_Layout";
+
+}
+
+
+<div class="card">
+    <div class="row">
+        <div class="column">
+            <h2><b>FeedBack Form</b></h2>
+            <form asp-action="Admin_ReplayClick" class="form-horizontal" method="post">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label class="control-label">Feedback</label>
+                                <input asp-for="Response_text" class="form-control" style="width:800px" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-primary" style="width:800px" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    body {
+      background-color:cadetblue;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: fit-content;
+        height: auto;
+        margin: 5% auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+</style>

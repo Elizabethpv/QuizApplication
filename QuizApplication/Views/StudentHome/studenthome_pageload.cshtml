@@ -1,0 +1,39 @@
+﻿@{
+    TempData["UserType"] = "student";
+    Layout = "_Layout";
+
+}
+
+<table>
+    <tr>
+        <td>
+            <div style="padding:100px">
+                <a href="@Url.Action("Quiz_start", "StudentHome")">
+                    <img src="@Url.Content("~/homepageimage/quizz.png")" style="width:150px; height:150px" />
+                </a>
+                <br />
+                <h2>@Html.ActionLink("Start Quiz", "Quiz_start", "StudentHome")</h2>
+            </div>
+        </td>
+        <td></td>
+        <td>
+            <div style="padding:100px">
+                <a href="@Url.Action("student_feedback", "StudentHome")">
+                    <img src="@Url.Content("~/homepageimage/feeedback.png")" style="width:150px; height:150px" />
+                </a>
+                <br />
+                <h2>@Html.ActionLink("Feedback", "student_feedback", "StudentHome")</h2>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+@* <div style="padding:100px">
+    <a href="@Url.Action("", "")">
+        <img src="@Url.Content("~/homepageimage/quiz.png")" style="width:200px; height:200px" />
+    </a>
+    <br />
+    <h2>@Html.ActionLink("General knowldge", "", "")</h2>
+</div> *@
+

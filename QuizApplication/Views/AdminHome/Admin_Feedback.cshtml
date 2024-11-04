@@ -1,0 +1,56 @@
+﻿@model IEnumerable<QuizApplication.Models.Feedback>
+
+@{
+    Layout = "_Layout";
+    TempData["UserType"] = "admin";
+}
+
+<h2>User Feedback</h2>
+<br />
+<table class="table">
+    <thead class="colorss">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Feedback</th>
+           @*  <th scope="col">Replay</th> *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Student_name</td>
+                <td>@item.Student_Email</td>
+                <td>@item.Feedback_text</td>
+               @*  <td>
+                    @Html.ActionLink("Replay", "Admin_Replay", "AdminHome", new { feedbackId = item.feedbackid }, new { @class = "button" })
+                  
+                   
+                </td> *@
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+@{
+    if (@TempData["msg1"] != null)
+    {
+        <script>
+            alert('@TempData["msg1"]')
+        </script>
+    }
+}
+
+<style>
+    .colorss{
+        background-color:darkslategrey;
+       color:white;
+    }
+   
+</style>
+
+
+

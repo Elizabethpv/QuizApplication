@@ -1,0 +1,47 @@
+﻿@model IEnumerable<QuizApplication.Models.Score>
+
+@{
+
+    Layout = "_Layout";
+    TempData["UserType"] = "admin";
+}
+
+<h3>Student Score</h3>
+<br />
+<table class="table">
+    <thead class="colorss">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Exam Date</th>
+            <th scope="col">Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.studentname</td>
+                <td>@item.Email</td>
+                <td>@item.DOB</td>
+                <td>@item.Date</td>
+                <td>@item.score</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+@{
+    if (@TempData["msg1"] != null)
+    {
+        <script>
+            alert('@TempData["msg1"]')
+        </script>
+    }
+}
+<style>
+    .colorss{
+        background-color:darkseagreen;
+    }
+</style>

@@ -180,7 +180,29 @@ namespace QuizApplication.Models
                 throw;
             }
         }
-       
 
+        public string Fn_UpdateQuestionID()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UpdateQuestionsID", con);
+                cmd.CommandType = CommandType.StoredProcedure;            
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                return ("Updated successfully");
+            }
+            catch (Exception ex)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                return ex.Message.ToString();
+            }
+
+        }
     }
 }

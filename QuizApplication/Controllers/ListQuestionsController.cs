@@ -35,6 +35,7 @@ namespace QuizApplication.Controllers
             {
                 TempData["msg1"] = "Deleted Succussflly";
             }
+            dbobj.Fn_UpdateQuestionID();
             return RedirectToAction("ListQuestion_Load", "ListQuestions");
         }
     }

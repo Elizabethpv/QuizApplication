@@ -16,6 +16,7 @@
                             <div class="form-group">
                                 <label class="control-label">Question</label>
                                 <input asp-for="QuestionText" class="form-control" style="width:800px" />
+                                <span asp-validation-for="QuestionText" class="text-danger"></span>
                             </div>
                         </td>
                     </tr>
@@ -24,12 +25,14 @@
                             <div class="form-group">
                                 <label class="control-label">Option A</label>
                                 <input asp-for="Ques_OPA" class="form-control custom-input" />
+                                <span asp-validation-for="Ques_OPA" class="text-danger"></span>
                             </div>
                         </td>
                         <td>
                             <div class="form-group">
                                 <label class="control-label">Option B</label>
                                 <input asp-for="Ques_OPB" class="form-control custom-input" />
+                                <span asp-validation-for="Ques_OPB" class="text-danger"></span>
                             </div>
                         </td>
                     </tr>
@@ -38,12 +41,14 @@
                             <div class="form-group">
                                 <label class="control-label">Option C</label>
                                 <input asp-for="Ques_OPC" class="form-control custom-input" />
+                                <span asp-validation-for="Ques_OPC" class="text-danger"></span>
                             </div>
                         </td>
                         <td>
                             <div class="form-group">
                                 <label class="control-label">Option D</label>
                                 <input asp-for="Ques_OPD" class="form-control custom-input" />
+                                <span asp-validation-for="Ques_OPD" class="text-danger"></span>
                             </div>
                         </td>
                     </tr>
@@ -52,6 +57,7 @@
                             <div class="form-group">
                                 <label class="control-label">Correct Option </label>
                                 <input asp-for="Correct_OP" class="form-control" style="width:800px" />
+                                <span asp-validation-for="Correct_OP" class="text-danger"></span>
                             </div>
                         </td>
                     </tr>

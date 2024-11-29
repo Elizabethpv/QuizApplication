@@ -12,21 +12,23 @@ namespace QuizApplication.Controllers
         }
         public IActionResult Studreg_click(StudentReg sdbobj)
         {
-            string maxregid = dbobj.Fn_GetRegId();
-            int Regid = 0;
-            if (maxregid == "")
+            if (ModelState.IsValid)
             {
-                Regid = 1;
+                string maxregid = dbobj.Fn_GetRegId();
+                int Regid = 0;
+                if (maxregid == "")
+                {
+                    Regid = 1;
+                }
+                else
+                {
+                    int newid = Convert.ToInt32(maxregid);
+                    Regid = newid + 1;
+                }
+                int regId = Regid;
+                string msg = dbobj.Fn_StudentReg(sdbobj, regId);
+                TempData["msg"] = msg;
             }
-            else
-            {
-                int newid = Convert.ToInt32(maxregid);
-                Regid = newid + 1;
-            }
-            int regId = Regid;
-            string msg = dbobj.Fn_StudentReg(sdbobj, regId);
-            TempData["msg"] = msg;
-
             return View("Studreg_Pageload");
             
         }

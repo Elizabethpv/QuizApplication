@@ -15,22 +15,23 @@ namespace QuizApplication.Controllers
         [HttpPost]
         public IActionResult AdminReg_click(AdminReg adobj)
         {
-          
-            string maxregid = dbobj.Fn_GetRegId();
-            int Regid = 0;
-            if (maxregid == "")
+            if (ModelState.IsValid)
             {
-                Regid = 1;
+                string maxregid = dbobj.Fn_GetRegId();
+                int Regid = 0;
+                if (maxregid == "")
+                {
+                    Regid = 1;
+                }
+                else
+                {
+                    int newid = Convert.ToInt32(maxregid);
+                    Regid = newid + 1;
+                }
+                int regId = Regid;
+                string msg = dbobj.Fn_AdiminReg(adobj, regId);
+                TempData["msg"] = msg;
             }
-            else
-            {
-                int newid = Convert.ToInt32(maxregid);
-                Regid = newid + 1;
-            }
-            int regId = Regid;            
-            string msg = dbobj.Fn_AdiminReg(adobj,regId);
-            TempData["msg"] = msg;
-
             return View("AdminReg_load");
             
         }

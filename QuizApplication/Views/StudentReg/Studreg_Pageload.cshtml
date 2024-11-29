@@ -12,24 +12,31 @@
                 <div class="form-group">
                     <label class="control-label">Name</label>
                     <input asp-for="Stud_Name" class="form-control  custom-input" id="txt1" />
+                    <span asp-validation-for="Stud_Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Date of birth</label>
                     <input asp-for="Stud_DOB" class="form-control custom-input" type="date" />
+                    <span asp-validation-for="Stud_DOB" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label">Email</label>
                     <input asp-for="Stud_Email" class="form-control custom-input" id="txt2" />
+                    <span asp-validation-for="Stud_Email" class="text-danger"></span>
+               
                 </div>
                 <div class="form-group">
                     <label class="control-label">Username</label>
                     <input asp-for="Username" class="form-control custom-input" id="txt3" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
+               
                 <div class="form-group">
                     <label class="control-label">Password</label>
                     <input asp-for="Password" class="form-control custom-input" id="txt4" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
